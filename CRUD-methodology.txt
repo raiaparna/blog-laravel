@@ -1,0 +1,17 @@
+Create
+/blog/create
+
+Read
+/blog
+
+Update - PUT or PATCH
+/blog/{slug}
+
+Delete - DELETE
+/blog/{id}
+
+Show - GET
+/blog/{id}
+
+Edit - GET
+/blog/{id}/edit

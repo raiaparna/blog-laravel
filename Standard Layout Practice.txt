@@ -1,0 +1,31 @@
+Paragraph Font
+
+Line Height: 2 rem
+Font-size: 18
+margin botton: 20px
+
+Helvetica Neue/Roboto/Calibri/Open sans
+
+------------------------
+Column Width
+
+The ideal column width for a blog post is anywhere between 55 and 100 characters (including spaces) per line, although most experts recommend 80 characters or fewer.
+------------------------
+Fonts
+
+Sans Serif
+
+Sans Serif fonts are widely used in the digital world. These fonts are perfect for your website and blogs. You can use a Sans Serif font in your headings, body copy, and anywhere on your website.
+
+But do remember that not all Sans Serif fonts are good.
+
+Arial, Verdana, Helvetica, Futura, Calibri, and Century Gothic.
+----
+Modern
+
+These fonts are used in photography blogs. Modern fonts attract millennials.
+These fonts are suitable for use in blog header and titles.
+
+Impact, Infinity, Majoram, Rockwell, and Agency.
+
+----------------------------------------------

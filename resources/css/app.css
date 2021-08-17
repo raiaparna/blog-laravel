@@ -1,0 +1,336 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+
+@layer base {
+  body {
+    @apply text-gray-900 mb-5;
+    font: normal 16px/1.35 'Open sans', san-serif !important;
+  }
+  h1 {
+    @apply font-open-sans-condensed font-bold text-3xl text-gray-800 mb-10 text-center;
+  }
+  h2 {
+    @apply text-base font-bold mb-3;
+  }
+  h3 {
+    @apply text-lg text-center mb-10 mx-auto leading-7;
+  }
+  h4 {
+    @apply text-base text-center mb-10 mx-auto leading-7 font-bold;
+  }
+  p {
+    @apply mb-5;
+  }
+  header {
+    @apply flex flex-wrap flex-row justify-between bg-yellow-400 py-2 relative shadow;
+  }
+  a, button {
+    @apply ease-linear transition-all duration-150;
+  }
+  button, a.btn, span.btn {
+    @apply outline-none border-2 font-bold text-sm px-4 py-2 rounded shadow;
+    &:focus {
+      @apply outline-none border;
+    }
+  }
+  label {
+    @apply block text-sm font-medium text-gray-700;
+  }
+  input[type=text], input[type=file], input[type=email], input[type=password], textarea {
+    @apply outline-none mt-1 block w-full shadow-sm text-sm border-gray-300 rounded-md !important;
+    &:focus {
+      @apply outline-none ring-yellow-400 border-yellow-400 !important;
+    }
+  }
+  .users {
+    @apply overflow-hidden;
+    table {
+      @apply w-full border-collapse border border-gray-300;
+      th {
+        @apply border border-gray-300 bg-gray-200 p-2;
+      }
+      td {
+        @apply text-center border border-gray-300 p-2;
+        a {
+          @apply px-2 py-1 text-xs border-2 rounded text-white;
+        }
+        a.btn-blue {
+          @apply border-blue-800 bg-blue-700;
+        }
+        a.btn-pink {
+          @apply border-pink-800 bg-pink-700;
+        }
+        span {
+          @apply px-2 py-1 text-xs text-gray-700;
+        }
+      }
+    }
+  }
+}
+@layer components {
+  .validation-message {
+    @apply text-red-500 text-xs;
+  }
+  .truncate-3-lines {
+    max-height: 4.0em; /* double the size of line-height */
+    display: block;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+  }
+  hr.dotted {
+    margin: 1.5em auto;
+    position: relative;
+    height: 9px;
+    width: 9px;
+    border: transparent;
+    overflow: visible;
+    background-image: url('data:image/svg+xml;utf8,<svg width="9" height="9" viewBox="0 0 9 9" xmlns="http://www.w3.org/2000/svg"><rect x="0.75" y="0.5" width="8" height="8" rx="4" fill="%23FCB643" /></svg>');
+    
+    &:before {
+      position: absolute;
+      height: 9px;
+      width: 10px;
+      content: '';
+      background-image: url('data:image/svg+xml;utf8,<svg width="10" height="9" viewBox="0 0 10 9" xmlns="http://www.w3.org/2000/svg"><path d="M3.91043 1.29752C4.30449 0.688518 5.19551 0.688519 5.58957 1.29752L9.25143 6.95675C9.68196 7.62211 9.20436 8.5 8.41186 8.5H1.08814C0.29564 8.5 -0.181954 7.62211 0.248574 6.95675L3.91043 1.29752Z" fill="%23EF4099" /></svg>');
+      left: -18px;
+    }
+    
+    &:after {
+      position: absolute;
+      height: 9px;
+      width: 9px;
+      content: '';
+      background-image: url('data:image/svg+xml;utf8,<svg width="9" height="9" viewBox="0 0 9 9" xmlns="http://www.w3.org/2000/svg"><rect x="0.75" y="0.5" width="8" height="8" rx="1" fill="%231CB0A8" /></svg>');
+      right: -18px;    
+    }
+  }
+  .modal {
+    transition: opacity 0.25s ease;
+  }
+  body.modal-active {
+    overflow-x: hidden;
+    overflow-y: visible !important;
+  }
+  .read-more {
+    @apply px-3 py-2 text-sm text-gray-800 border-2 border-yellow-200 inline-block rounded bg-yellow-100 shadow-md;
+    &:hover {
+      @apply text-white bg-yellow-400 border-yellow-400;
+    }
+  }
+  .btn-new {
+    @apply px-2 py-1 bg-green-400 text-white shadow rounded-full h-12 w-12 flex items-center justify-center text-4xl font-semibold;
+    &:hover {
+      @apply bg-green-500;
+    }
+  }
+  .btn-edit {
+    @apply rounded bg-blue-400 text-white text-xs shadow;
+    padding: 2px 8px 3px;
+    &:hover {
+      @apply bg-blue-500;
+    }
+  }
+  .btn-delete {
+    @apply rounded bg-red-400 text-white text-xs shadow ml-2;
+    padding: 2px 8px 3px;
+    &:hover {
+      @apply bg-red-500;
+    }
+  }
+  .btn-save {
+    @apply bg-green-400 text-white border-green-400;
+    &:hover {
+      @apply bg-green-500 border-green-500;
+    }
+  }
+  .btn-cancel {
+    @apply bg-yellow-400 text-white border-yellow-400;
+    &:hover{
+      @apply bg-yellow-500 border-yellow-500;
+    }
+  }
+  .btn-destroy {
+    @apply bg-red-400 text-white border-red-400;
+    &:hover{
+      @apply bg-red-500 border-red-500;
+    }
+  }
+  .post-snippet {
+    @apply leading-6;
+  }
+  .post-heading {
+    &:hover {
+      @apply text-yellow-400;
+    }
+  }
+  .post-info {
+    @apply text-gray-400 text-xs mb-2;
+    a.link {
+      &:hover {
+        @apply text-yellow-400;
+      }      
+    } 
+    span.padd {
+      @apply px-5;
+    }
+  }
+  .post-single {
+    .post-short {
+      @apply max-w-3xl leading-7 text-gray-500;
+    }
+    .post-long {
+      @apply max-w-3xl mx-auto pb-5 border-b-2 border-gray-200;
+      p {
+        @apply text-base;
+      }
+    }
+    .img-caption {
+      @apply text-center text-sm text-gray-500 mb-5;
+    }    
+  }
+  .showcase {
+    @apply w-full mb-10;
+    background-size:cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    height: 450px;
+    a.showcase-read-more {
+      @apply block px-6 py-3 border-2 border-white text-white text-lg rounded;
+      &:hover {
+        @apply bg-white text-black;
+      }
+    }
+  }
+  .wide-img, .tight-img {
+    @apply w-full;
+    background-size:cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    height: 450px;
+  }
+  .post-pagination {
+    @apply pt-5;
+    nav > div:first-child > span {
+      @apply bg-yellow-400 text-white border-yellow-400;
+      &:hover {
+        @apply bg-yellow-500 border-yellow-500;
+      }
+    }
+    nav > div:first-child > a {
+      @apply text-yellow-400 bg-white border-yellow-400;
+      &:hover {
+        @apply bg-yellow-400 text-white;
+      }
+    }
+    nav > div:nth-child(2) > div:first-child {
+      @apply hidden;
+    }
+     
+    nav > div:nth-child(2) > div:nth-child(2) > span > a {
+      @apply mr-2 border-yellow-400 text-yellow-500;
+      &:hover {
+        @apply bg-yellow-400 text-white;
+      }
+      &:focus {
+        @apply outline-none;
+      }
+    }
+    nav > div:nth-child(2) > div:nth-child(2) > span > span > span {
+      @apply mr-2 border-yellow-400 bg-yellow-400 text-white border-2;
+      &:focus {
+        @apply outline-none;
+      }
+    }
+    nav > div:nth-child(2) > div:nth-child(2) > span > a:last-child {
+      @apply mr-0;
+    }
+  }
+  .profile {
+    .left-panel li > a, .left-panel li > span {
+      @apply px-5 py-2 bg-gray-200 border-2 border-gray-300 shadow rounded-3xl mb-5 block font-bold;
+      &:hover {
+        @apply bg-yellow-400 border-yellow-400 text-white;
+      }
+      span {
+        @apply ml-2 px-2 py-1 text-xs bg-yellow-500 rounded-full text-white;
+      }
+    }
+    .left-panel li > .active {
+      @apply bg-yellow-400 border-yellow-400 text-white;
+    }
+    .right-panel {
+      @apply col-span-3 w-full mx-auto p-5;
+      .general-info {
+        img {
+          @apply block mx-auto rounded-full h-72 w-72 bg-no-repeat bg-center bg-cover border-2 border-gray-200 shadow;
+        }
+        .about {
+          @apply max-w-3xl mx-auto;
+        }
+        .other-info {
+          @apply max-w-3xl mx-auto ;
+          div {
+            @apply py-2 justify-items-start;
+            span {
+              @apply block py-2 font-bold;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+@screen sm {
+  body {
+    @apply text-base;
+  }
+  h1 {
+    @apply text-5xl;
+  }
+  h2 {
+    @apply text-2xl;
+  }
+  h3 {
+    @apply text-xl;
+  }
+  header {
+    @apply items-center shadow-lg;
+  }
+  .read-more {
+    @apply text-sm;
+  }  
+  .post-info {
+    @apply text-sm;
+  }
+  .post-single {
+    .post-long {
+      p {
+        @apply text-lg;
+      }
+    }
+  }
+  .showcase {
+    height: 650px;
+  }
+  .wide-img {
+    height: 530px;
+  }
+  .tight-img {
+    height: 250px;
+  }
+}
+@screen md {
+  .post-pagination {
+    @apply pt-10;
+  }
+  left-panel li > a {
+    @apply px-5;
+  }
+}

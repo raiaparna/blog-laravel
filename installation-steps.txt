@@ -1,0 +1,12 @@
+1. laravel new project
+2. cd project
+3. composer require laravel-frontend-presets/tailwindcss --dev
+4. php artisan ui tailwindcss --auth
+5. npm remove laravel-mix
+6. npm install laravel-mix --save-dev
+7. npm install cross-env --save-dev
+8. npm run watch
+
+-------
+
+https://artisansweb.net/how-to-install-and-use-trix-editor-in-laravel/

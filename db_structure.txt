@@ -1,0 +1,47 @@
+User
+
+id
+name
+email
+username
+password
+mobile
+about
+image_url
+created_at
+updated_at
+
+------------
+Posts
+
+id
+title
+slug
+short_description
+long_description
+image_url - null
+image_caption - null
+user_id
+showcase_flag - Default 0
+created_at
+updated_at
+----------------------
+
+Name
+Email
+Username
+Mobile
+--
+Picture
+About
+--
+Joined
+Followers
+Follows
+Blogs /posts/aparnarai
+
+------
+
+Search Post by Author, title
+Deployment
+
